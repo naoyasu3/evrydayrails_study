@@ -30,7 +30,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.15.4'
+  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   # Or use poltergeist and PhantomJS as an alternative to Selenium/Chrome
