@@ -4,6 +4,13 @@ RSpec.describe Note, type: :model do
   let(:user) { FactoryBot.create(:user) }
   let(:project) { FactoryBot.create(:project, owner: user) }
 
+  it "名前の取得をメモを作成したユーザーに委譲すること" do
+    user = instance_double("User", name: "Fake User")
+    note = Note.new
+    allow(note).to receive(:user).and_return(user)
+    expect(note.user_name).to eq "Fake User"
+  end
+
   it "is valid with a user, project, and message" do
     note = Note.new(
       message: "This is a sample note.",
