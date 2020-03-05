@@ -32,7 +32,7 @@ end
 group :test do
   gem 'capybara', '~> 2.15.4'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   # Or use poltergeist and PhantomJS as an alternative to Selenium/Chrome
   # gem 'poltergeist', '~> 1.15.0'
   gem 'launchy', '~> 2.4.3'
@@ -40,7 +40,7 @@ group :test do
     git: 'https://github.com/thoughtbot/shoulda-matchers.git',
     branch: 'rails-5'
   gem 'vcr'
-  gem 'webmock'
+  gem 'webmock', '~> 3.8', '>= 3.8.2'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
