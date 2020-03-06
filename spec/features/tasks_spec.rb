@@ -13,6 +13,7 @@ RSpec.feature "Tasks", type: :feature do
     sign_in user
     go_to_project "RSpec tutorial"
 
+    
     complete_task "Finish RSpec tutorial"
     expect_complete_task "Finish RSpec tutorial"
 
