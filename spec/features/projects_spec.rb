@@ -44,4 +44,22 @@ RSpec.feature "Projects", type: :feature do
     expect(page).to have_content "Completed"
     expect(page).to_not have_button "Complete"
   end
+
+  scenario "完了済のプロジェクトは非表示にする" do
+    user = FactoryBot.create(:user)
+    project = FactoryBot.create(:project, owner: user)
+
+    sign_in user
+
+    visit project_path(project)
+
+    expect(page).to_not have_content "Completed"
+
+    click_button "Complete"
+
+    visit root_path
+    save_and_open_page
+    expect(page).to_not have_content project.name
+
+  end
 end
