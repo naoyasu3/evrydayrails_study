@@ -9,8 +9,10 @@
 
 
 <% @projects.each do |project| %>
-  <h2><%= link_to project.name, project %></h2>
-  <p>
-    <%= project.description %>
-  </p>
+  <% if project.completed == nil %>
+    <h2><%= link_to project.name, project %></h2>
+    <p>
+      <%= project.description %>
+    </p>
+  <% end %>
 <% end %>

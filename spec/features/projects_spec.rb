@@ -58,7 +58,7 @@ RSpec.feature "Projects", type: :feature do
     click_button "Complete"
 
     visit root_path
-    save_and_open_page
+    
     expect(page).to_not have_content project.name
 
   end
